@@ -11,6 +11,20 @@ public class Savings extends Account{
         //TODO Auto-generated constructor stub
     }
 
+    @Override
+    public void deposit(double amount) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public boolean withdraw(double amount) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    
+
 
 
 }
