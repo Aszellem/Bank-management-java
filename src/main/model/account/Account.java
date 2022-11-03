@@ -1,5 +1,9 @@
 package src.main.model.account;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 public abstract class Account {
     private String id;
     private String name;
@@ -50,6 +54,14 @@ public abstract class Account {
         this.balance = balance;
     }
 
+    public abstract void deposit(double amount);
+
+    public abstract boolean withdraw(double amount);
+
+    protected double round(double amount) {
+        DecimalFormat formatter = new DecimalFormat("#.##", new DecimalFormatSymbols(Locale.ENGLISH));
+        return Double.parseDouble(formatter.format(amount));
+    }
 
     @Override
     public String toString() {
