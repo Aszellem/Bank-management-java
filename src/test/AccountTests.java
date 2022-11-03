@@ -64,4 +64,10 @@ public class AccountTests {
         accounts[2].withdraw(7463.69);
         assertEquals(2537.31, accounts[2].getBalance());
     }
+
+    @Test
+    public void deposit(){
+        accounts[0].deposit(5000);
+        assertEquals(6524.51, accounts[0].getBalance());
+    }
 }

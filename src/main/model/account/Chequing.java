@@ -15,8 +15,7 @@ public class Chequing extends Account {
 
     @Override
     public void deposit(double amount) {
-        // TODO Auto-generated method stub
-
+        super.setBalance(super.round(super.getBalance() + amount));
     }
 
     @Override
