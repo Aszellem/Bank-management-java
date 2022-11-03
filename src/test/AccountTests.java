@@ -37,4 +37,11 @@ public class AccountTests {
         assertEquals(-15.42, accounts[0].getBalance());
     }
 
+    //The overdraft limit is $200.00 dollars.
+    @Test
+    public void overdraftLimit(){
+        accounts[0].withdraw(1726);
+        assertEquals(1524.51, accounts[0].getBalance());
+    }
+
 }
