@@ -2,6 +2,8 @@ package src.main.model.account;
 
 public class Savings extends Account{
 
+    private static final double WITHDRAWAL_FEE = 5.00;
+
     public Savings(Account source) {
         super(source);
     }
@@ -19,8 +21,8 @@ public class Savings extends Account{
 
     @Override
     public boolean withdraw(double amount) {
-        // TODO Auto-generated method stub
-        return false;
+        super.setBalance(super.round(super.getBalance() - amount - WITHDRAWAL_FEE));
+        return true;
     }
 
     

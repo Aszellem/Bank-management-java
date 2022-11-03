@@ -2,6 +2,8 @@ package src.main.model.account;
 
 public class Loan extends Account{
 
+    private static final double INTEREST_RATE = 0.02;
+
     public Loan(Account source) {
         super(source);
     }
@@ -19,8 +21,8 @@ public class Loan extends Account{
 
     @Override
     public boolean withdraw(double amount) {
-        // TODO Auto-generated method stub
-        return false;
+        super.setBalance(super.round(super.getBalance() + amount + (amount * INTEREST_RATE)));
+        return true;
     }
     
 
