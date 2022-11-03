@@ -44,4 +44,18 @@ public class AccountTests {
         assertEquals(1524.51, accounts[0].getBalance());
     }
 
+    //Deposits are free, but the savings account charges a $5.00 fee for every withdrawal.
+    @Test
+    public void withdrawalFee(){
+        accounts[1].withdraw(100);
+        assertEquals(2136.60, accounts[1].getBalance());
+    }
+
+    //Every withdrawal is charged a fixed interest rate of 2%.
+    @Test
+    public void withdrawalInterest(){
+        accounts[2].withdraw(2434.31);
+        assertEquals(5020.31, accounts[2].getBalance());
+    }
+
 }
