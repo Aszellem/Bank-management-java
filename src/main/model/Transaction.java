@@ -12,6 +12,9 @@ public class Transaction implements Comparable<Transaction>{
     private double amount;
 
     public Transaction(Type type, long timestamp, String id, double amount) {
+        if(id == null || id.isBlank() || amount < 0){
+            throw new IllegalArgumentException("Invalid params");
+        }
         this.type = type;
         this.timestamp = timestamp;
         this.id = id;
@@ -46,6 +49,9 @@ public class Transaction implements Comparable<Transaction>{
     }
 
     public void setId(String id) {
+        if(id == null || id.isBlank()){
+            throw new IllegalArgumentException("Invalid ID");
+        }
         this.id = id;
     }
 
@@ -54,6 +60,9 @@ public class Transaction implements Comparable<Transaction>{
     }
 
     public void setAmount(double amount) {
+        if(amount < 0){
+            throw new IllegalArgumentException("Invalid AMOUNT");
+        }
         this.amount = amount;
     }
 
