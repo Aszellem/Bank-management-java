@@ -2,10 +2,13 @@ package src.main.model.account;
 
 import src.main.model.account.impl.Taxable;
 
-public class Chequing extends Account implements Taxable{
+public class Chequing extends Account implements Taxable {
 
     private static final double OVERDRAFT_FEE = 5.50;
     private static final double OVERDRAFT_LIMIT = -200.00;
+
+    private static final double TAXABLE_INCOME = 3000;
+    private static final double TAX_RATE = 0.15;
 
     public Chequing(Account source) {
         super(source);
@@ -35,8 +38,8 @@ public class Chequing extends Account implements Taxable{
 
     @Override
     public void tax(double income) {
-        // TODO Auto-generated method stub
-        
+        double tax = Math.max(0, income - TAXABLE_INCOME) * TAX_RATE;
+        super.setBalance(super.round(super.getBalance() - tax));
     }
 
 }
