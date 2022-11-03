@@ -1,5 +1,7 @@
 package src.test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,8 +23,18 @@ public class AccountTests {
         };
     }
 
+    //A chequing account allows users to deposit or withdraw an amount of money.
     @Test
-    public void withdrawalTest(){
+    public void withdrawal(){
+        accounts[0].withdraw(1440);
+        assertEquals(84.51, accounts[0].getBalance());
+    }
+
+    //The chequing account charges an overdraft fee of $5.50 if the amount being withdrawn exceeds the account balance.
+    @Test
+    public void overdraft(){
+        accounts[0].withdraw(1534.43);
+        assertEquals(-15.42, accounts[0].getBalance());
     }
 
 }
