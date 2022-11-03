@@ -1,6 +1,8 @@
 package src.main.model.account;
 
-public class Chequing extends Account {
+import src.main.model.account.impl.Taxable;
+
+public class Chequing extends Account implements Taxable{
 
     private static final double OVERDRAFT_FEE = 5.50;
     private static final double OVERDRAFT_LIMIT = -200.00;
@@ -29,6 +31,12 @@ public class Chequing extends Account {
         }
         return true;
 
+    }
+
+    @Override
+    public void tax(double income) {
+        // TODO Auto-generated method stub
+        
     }
 
 }
