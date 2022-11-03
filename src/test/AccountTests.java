@@ -58,4 +58,10 @@ public class AccountTests {
         assertEquals(5020.31, accounts[2].getBalance());
     }
 
+    //A withdrawal can't made if the debt exceeds $10,000.
+    @Test
+    public void withdrawalLimit(){
+        accounts[2].withdraw(7463.69);
+        assertEquals(2537.31, accounts[2].getBalance());
+    }
 }
