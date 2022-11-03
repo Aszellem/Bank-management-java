@@ -10,6 +10,18 @@ public class Loan extends Account{
         super(id, name, balance);
         //TODO Auto-generated constructor stub
     }
+
+    @Override
+    public void deposit(double amount) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public boolean withdraw(double amount) {
+        // TODO Auto-generated method stub
+        return false;
+    }
     
 
 
